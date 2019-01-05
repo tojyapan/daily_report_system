@@ -85,7 +85,7 @@ public class EmployeesUpdateServlet extends HttpServlet {
 
 				request.getSession().removeAttribute("employee_id");
 
-				response.sendRedirect(request.getContextPath() + "/employees/index.jsp");
+				response.sendRedirect(request.getContextPath() + "/employees/index");
 			}
 		}
 	}
