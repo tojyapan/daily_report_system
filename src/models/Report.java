@@ -25,6 +25,14 @@ import javax.persistence.Table;
 			name = "getReportsCount",
 			query = "SELECT COUNT(r) FROM Report AS r"
 			),
+	@NamedQuery(
+			name = "getMyAllReports",
+			query = "SELECT r FROM Report AS r WHERE r.employee = :employee ORDER BY r.id DESC"
+			),
+	@NamedQuery(
+			name = "getMyReportsCount",
+			query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"
+			)
 })
 @Entity
 public class Report {
@@ -69,11 +77,11 @@ public class Report {
 		this.employee = employee;
 	}
 
-	public Date getReport_Date() {
+	public Date getReport_date() {
 		return report_date;
 	}
 
-	public void setReport_Date(Date report_date) {
+	public void setReport_date(Date report_date) {
 		this.report_date = report_date;
 	}
 
